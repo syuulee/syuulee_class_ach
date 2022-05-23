@@ -13,13 +13,13 @@
 .content .container figure {
   flex: 1;
 }
-/* flex 검색해보기  */
+/* flex는 flex-grow, flex-shrink, flex-basis를 한 번에 쓸 수 있는 축약형 속성  */
 
 .content img {
   width: 100%;
   margin: 0 0 20px 0;
 }
-/* img와 strong은 인라인이어서 아래위로 padding(좌우는 가능)/margin적용 안됨 */
+/* img와 strong은 inline이어서 아래위로 padding(좌우는 가능)/margin적용 안됨 */
 
 .content strong {
   display: block;
