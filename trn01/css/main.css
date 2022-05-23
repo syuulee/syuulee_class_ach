@@ -1,0 +1,40 @@
+.content {
+  padding: 100px 0;
+}
+
+.content .container {
+  display: flex;
+  gap: 30px;
+  width: 1200px;
+  margin: 0 auto;
+}
+/* 포지션->디스플레이->폰트관련->악세사리(트랜스폼0 */
+
+.content .container figure {
+  flex: 1;
+}
+/* flex 검색해보기  */
+
+.content img {
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+/* img와 strong은 인라인이어서 아래위로 padding(좌우는 가능)/margin적용 안됨 */
+
+.content strong {
+  display: block;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+.content p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.25;
+}
+/* **line-height는 글자가 가운데 위치하고 아래위로 공간이 나오면서 줄간격이 조절되는 것이다.
+그래서 글자와 line-height 사이에 공간이 존재하게 돼서 margin+글자사이 공간이 더해져서 같은 margin을 줘도 차이가 생긴다. 그럴 경우,
+15(폰트 사이즈) X 1.25(ling-height값) - 15하면 양쪽공간 나오고 나누기 2를 하고 마진에서 빼야함 */
+
+/* 굵은 글자 700으로 하고, 얇은 글자는 300으로 함
+100으로 하면 글자가 깨질 수 있음 */
