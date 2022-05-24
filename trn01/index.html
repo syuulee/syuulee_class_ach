@@ -13,59 +13,82 @@
     <script src="./js/slick.min.js"></script>
     <script src="./js/main.js"></script>
     <!-- ./js/main/js는 js.jquery-1.12에 의존하고 있음 -->
-    <!-- slider위치는 jquery 밑에, 그리고 적용하는 js위에 -->
+    <!-- slider위치는 메인이 되는 jquery 밑에, 그리고 slick을 적용하는 js위에 둔다. -->
 
 </head>
 
 <body>
     <div class="Wrap">
+        <div class="top_banner">
+            <ul class="container">
+                <li>DK스틸 : 수입파이프 일반파이프 환봉SS41 S45C 주문생산</li>
+                <li>
+                    <a href="">
+                        <i class="xi-pause"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
         <header class="header">
-            header
+            <div class="container">
+                <h1>
+                    <a href="/">
+                        <img src="./img/logo.png" alt="">
+                    </a>
+                </h1>
+                <nav>
+                    <ul>
+                        <li><a href="">회사소개</a></li>
+                        <li><a href="">파이프(ERW , SML'S)류</a></li>
+                        <li><a href="">형강류</a></li>
+                        <li><a href="">보유장비 및 절단가공 모양</a></li>
+                        <li><a href="">견적문의</a></li>
+                        <li><a href="">오시는길</a></li>
+                    </ul>
+                </nav>
+                <div class="top_link">
+                    <a href="">
+                        <i class="xi-bars"></i>
+                    </a>
+                </div>
+            </div>
+
+
         </header>
 
         <main>
-            <section class="content">
-                <div class="container">
+            <section class="main_visual">
+                <div class="main_slider">
                     <figure>
-                        <img src="./img/main_bg01.jpg" alt="DK-steel">
-                        <strong>고품질 철강 제품</strong>
-                        <p>조선 및 기계분야의 철강 제품을 절단 가공하여 유통하는 전문 기업입니다.</p>
-
+                        <img src="./img/main_bg01.jpg" alt="">
                     </figure>
                     <figure>
-                        <img src="./img/main_bg02.jpg" alt="DK-steel">
-                        <strong>최신설비와 축척된 기술</strong>
-                        <p>설립 후 30년 동안 최신설비와 축척된 기술로 철강의 모든 품목을 절단 가공하여 유통하고 있습니다.
-                        </p>
-
+                        <img src="./img/main_bg02.jpg" alt="">
                     </figure>
                     <figure>
-                        <img src="./img/main_bg03.jpg" alt="DK-steel">
-                        <strong>고객 제일주의, 고객에게 신뢰받는 기업</strong>
-                        <p>고객사와의 철저한 약속(납품기한) 및 품질관리을 원칙으로
-                            운영하고 있습니다.</p>
-
+                        <img src="./img/main_bg03.jpg" alt="">
                     </figure>
+                </div>
+                <div class="slogan">
+                    <h2>DK스틸</h2>
+                    <p>저희 회사는 설림후 30년 동안 철강의 모든 품목을 절단 가공하여 유통하는 2차 유통 업체로서<br />
+                        조선 및 기계분야의 철강 유통의 선주 주자 입니다.</p>
                 </div>
             </section>
         </main>
 
         <footer class="footer">
-            footer
+
         </footer>
     </div>
 </body>
 
 </html>
-<!-- class 이름 규칙 : 앞에 숫자 오면 안되고 대소문자 구분. 음절이 분리될 경우 '-'를 사용 또는 대문자 또는 '_' 사용 -->
 
-<!-- 인익스(IE)에서도 사용가능할 수 있게 할 경우 <main role="main"> 이렇게 사용함
- -->
+<!-- **ul>li가 사용될 때** 
+1. 같은 패턴이 반복될 때
+2. div가 쌓이는 상황일 때 -->
 
-<!-- main에서 사용하는 큰 box인 section은 이름을 붙여주는 게 rule -->
+<!-- a href="/"는 루트로 간다는 의미 -->
 
-<!-- 박스의 높이 결정은 padding하고 높이는 auto
-margin은 백그라운드를 포함하지 못하고, 겹침현상이 있음 -->
-
-<!-- h1~3는 box에 넣지 않는다.
-strong은 inline 테그 -->
+<!-- 슬라이드 돌릴 때는 이미지는 그냥 나열해두면 됨 -->

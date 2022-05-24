@@ -1,10 +1,9 @@
 $(function () {
-
-   $('.first_slider').slick({
-       arrows: false,
-       autoplay: true,
-       dots: true,
-   });
-
+   
+    $('.main_slider').slick({
+        arrows: false,
+        autoplay: true,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+    })
 })
-// document.queryselecto=$

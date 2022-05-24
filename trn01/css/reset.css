@@ -10,7 +10,7 @@
   font-size: inherit;
   font-weight: inherit;
 }
-/* 박스 사이즈가 늘어났 을 때, 사이즈 안으로 가두게 하는 명령이 boder-box
+/* 박스 사이즈가 늘어났을 때, 사이즈 안으로 가두게 하는 명령이 boder-box
 interit 상속 받는다. html에서 받는 사이즈로  font-weight기본이 400*/
 
 ol,
@@ -28,3 +28,7 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
 }
 /* 상속되는 게 있고, 안되는 게 있음 */
+
+img {
+  vertical-align: middle;
+}
