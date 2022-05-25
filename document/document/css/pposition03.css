@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+/* 웹폰트-구글폰트사용 */
+@import url("https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css");
+/* 웹아이콘-xeicon */
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+/* Noto Sans KR는 홀수일 때 가독성이 좋음 */
+
+#event {
+  padding: 100px 0;
+  text-align: center;
+}
+
+#event i {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+#event h2 {
+  font-size: 21px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+#event h2::before {
+  content: "";
+  display: inline-block;
+  width: 100px;
+  height: 1px;
+  background: #8888;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+
+#event h2::after {
+  content: "";
+  display: inline-block;
+  width: 100px;
+  height: 1px;
+  background: #8888;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+/* bar(선, 공간) 만들는 방법--많이 사용됨 
+css에서 만들기 때문에 안 읽혀서 좋으나, 시각장애인들은 읽을 수 없음
+이쁘게 만들 때 사용!!
+content를 하고 ""를 하는 이유는 텍스트가 들어가면 안되기 때문
+텍스트가 들어가면, 블록설정이 안됨=dom에서 제외되기 때문*/
+
+#event p {
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0 0 30px 0;
+  line-height: 1.4;
+}
+
+#event p::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  background: #8888;
+}
+
+#event .container {
+  display: flex;
+  gap: 30px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* gap은 양옆은 상관 없고, 이미지 사이의 간격을 띄우는 것
+인터넷 익스플로러에서는 안 돌아감*/
+
+#event img {
+  max-width: 100%;
+  transition: 0.5s;
+}
+/* transform은 레이아웃을 깨지 않음*/
+
+#event figure {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+/* overflow는 지정된 값에 따라 보여지지 않게 함
+  overflow:hidden은 넘치는 부분을 잘라서 보여지지 않게 한다는 것 의미
+position:relative 기준이 되게 함=more의 기준이 figure가 되게 함  */
+
+#event p::after {
+  content: "";
+  display: block;
+  width: 500px;
+  height: 1px;
+  background: grey;
+  margin: 0 auto;
+}
+
+#event .container figure:hover img {
+  transform: scale(2);
+}
+/* transform:scale은 지정한 크기만큼 확대 또는 축소 시킬 수 있음 */
+
+#event figure a {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 10px 30px;
+  background: #333;
+  color: #fff;
+  transition: 0.5s;
+}
+/* 마우스를 올렸을 때, 더보기와 같은 버튼이 생기게 하는 것 
+기준점(포지션 릴레이티브)을 잡고 시작해야함*/
+
+#event figure:hover a {
+  top: 0;
+}
