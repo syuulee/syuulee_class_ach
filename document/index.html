@@ -247,7 +247,7 @@
                 2. get it now -> css와 js의 링크를 '다른 이름으로 링크 저장'을 눌러, 각각 css와 js 폴더에 저장한다.
                 3. html링크 부분에 저장한 링크를 적어주면 됨
                  </pre>
-
+            <hr>
             <p><a href="https://syuulee.github.io/trn01/">DK-steel 홈페이지를 만들어보자(2)</a></p>
             <em>2022.05.24.TUE</em>
             <p>1. top배너 만들기<br>
@@ -284,7 +284,7 @@
                 aos : 스크롤 애니메이션
                  </pre>
         </li>
-        <hr>
+
         <p><a href="../document/doc/position04.html">포지션을 이용한 움직이는 신발</a></p>
         <em>2022.05.25.TUE</em>
         <!--  -->
@@ -331,19 +331,60 @@
                     
                     </pre>
 
-        <p><a href="../document/doc/smile.html">mission 얼굴 만들기</a></p>
+        <p><a href="../document/doc/smile.html">mission "스마일 만들어라"</a></p>
         <p><small> </small></p>
         <pre>
 
                  </pre>
         </li>
+        <hr>
+        <br>
+        <li>
+            <p><a href="../document/doc/position05.html">1. 어제 mission "스마일을 만들어라" 풀이</a></p>
+            <p><a href="..//document/doc/position06.html">2. position을 활용 top배너, right배너, 자동차, 해, 하트를 만들어보자!</a></p>
+            <em>2022.05.26.THU</em>
+            <p>1. top배너 만들기_ref 던킨 사이트 with positon:absolute<br>
+                2. right배너 만들기_ref 쇼핑몰 사이트 with positon:fixed<br>
+                3. 움직이는 sun, car, heart with @keyframes, animation </p>
+            <!--  -->
+            <!--  -->
+            <p><small> 오늘 수업 재밌었다.
+                    그리고 나는 smile을 디게 복잡하게 만들었는데, li:nth child로..깔끔하게 만드는 거에 놀랐다. 선생님 풀이는 간단+핵심이었고, 내가 만든 스마일은
+                    복잡+복잡+복잡,,,,복잡
+                </small></p>
+            <pre>
+-:nth child를 하면, 부모?부분에 이미 position값과 transform:rotate값을 줬기 때문에 또 적을 필요 없이 top과 left/right값을 주면 됨 
+
+- (right_banner부분에서) background에 색만 주면 화면의 가로폭만큼 색이 입혀지다가, position: absolute/fixed를 주면 텍스트 사이즈(사이즈 auto)만큼 "쪼그라든다-position의 기본 특징" 
+
+- container를 1200px로 만들었고, position을 부여한 상태면, top 또는 bottom 값을 줘야한다. 그래야 나중에 꼬이지 않음!
+
+- @keyframes 효과 주고, 효과를 먹이는 곳에 가서 animation: 키프레임 이름 / 몇 초 /  infinite 계속 돌아라 / linear 등속tag를 해야함
+ 
+
+-background: transparent; 백그라운드 색 빠짐
+ cursor: pointer; 버튼에 마우스 올리면, 커서 모양이 손가락 모양으로 바뀜
+
+ / 는 잘 안 씀=루트로 가라
+ ./ 나와 어깨를 나란히 하는 곳으로 가라
+ ../ 부모 경로 찾아가라
+ 
+ ul은 li만 데리고 다님
+ ol도 li만 데리고 다님
+ strong-li 이건 안됨=h1이 20개 있는 거랑 같은 상황
+ 
+ ul :리스트를 가지고 있는 tag(번호가 없는 list) ---li가 자식
+ ol : 번호가 있는 리스트 ---li가 자식
+ dl :  설명(description)을 리스트 형식으로 정의 ---dt(굵게 사용) dd가 자식
+       용어(term)나 이름(name)을 나타내는 dt요소와 해당 용어에 대한 설명을 나타내는 dd요소로 구성
+ 
+                 </pre>
     </ol>
-    <hr>
 
 
 
 
-    </ol>
+
 
     </ol>
 
