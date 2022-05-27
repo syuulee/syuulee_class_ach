@@ -30,5 +30,8 @@ body {
 /* 상속되는 게 있고, 안되는 게 있음 */
 
 img {
+  max-width: 100%;
   vertical-align: middle;
 }
+/* 이미지 최대 넓이를 100% 벗어나지 말아라ㅏㅏㅏ */
+/* vertical-align 이미지를 중간으로 배치하라 */
