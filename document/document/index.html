@@ -247,8 +247,8 @@
                 2. get it now -> css와 js의 링크를 '다른 이름으로 링크 저장'을 눌러, 각각 css와 js 폴더에 저장한다.
                 3. html링크 부분에 저장한 링크를 적어주면 됨
                  </pre>
-
-            <p><a href="https://syuulee.github.io/trn01/">DK-steel 홈페이지를 만들어보자(2)</a></p>
+            <hr>
+            <p><a href="https://syuulee.github.io/trn01/">5-2. DK-steel 홈페이지를 만들어보자(2)</a></p>
             <em>2022.05.24.TUE</em>
             <p>1. top배너 만들기<br>
                 2. 메뉴 만들기<br>
@@ -284,8 +284,8 @@
                 aos : 스크롤 애니메이션
                  </pre>
         </li>
-        <hr>
-        <p>&#9314;<a href="../document/doc/position04.html">포지션을 이용한 움직이는 신발</a></p>
+
+        <p><a href="../document/doc/position04.html">5-3. 포지션을 이용한 움직이는 신발</a></p>
         <em>2022.05.25.TUE</em>
         <!--  -->
         <p><small> 하... </small></p>
@@ -331,19 +331,104 @@
                     
                     </pre>
 
-        <p>&#9314;<a href="../document/doc/smile.html">mission 얼굴 만들기</a></p>
+        <p><a href="../document/doc/smile.html">5-4. mission "스마일 만들어라"</a></p>
         <p><small> </small></p>
         <pre>
 
                  </pre>
         </li>
-    </ol>
-    <hr>
+        <hr>
+        <br>
+        <li>
+            <p><a href="../document/doc/position05.html">어제 mission "스마일을 만들어라" 풀이</a></p>
+            <p><a href="..//document/doc/position06.html">6-2. position을 활용 top배너, right배너, 자동차, 해, 하트를 만들어보자!</a></p>
+            <em>2022.05.26.THU</em>
+            <p>1. top배너 만들기_ref 던킨 사이트 with positon:absolute<br>
+                2. right배너 만들기_ref 쇼핑몰 사이트 with positon:fixed<br>
+                3. 움직이는 sun, car, heart with @keyframes, animation </p>
+            <!--  -->
+            <!--  -->
+            <p><small> 오늘 수업 재밌었다.
+                    그리고 나는 smile을 디게 복잡하게 만들었는데, li:nth child로..깔끔하게 만드는 거에 놀랐다. 선생님 풀이는 간단+핵심이었고, 내가 만든 스마일은
+                    복잡+복잡+복잡,,,,복잡
+                </small></p>
+            <pre>
+-:nth child를 하면, 부모?부분에 이미 position값과 transform:rotate값을 줬기 때문에 또 적을 필요 없이 top과 left/right값을 주면 됨 
+
+- (right_banner부분에서) background에 색만 주면 화면의 가로폭만큼 색이 입혀지다가, position: absolute/fixed를 주면 텍스트 사이즈(사이즈 auto)만큼 "쪼그라든다-position의 기본 특징" 
+
+- container를 1200px로 만들었고, position을 부여한 상태면, top 또는 bottom 값을 줘야한다. 그래야 나중에 꼬이지 않음!
+
+- @keyframes 효과 주고, 효과를 먹이는 곳에 가서 animation: 키프레임 이름 / 몇 초 /  infinite 계속 돌아라 / linear 등속tag를 해야함
+ 
+
+-background: transparent; 백그라운드 색 빠짐
+ cursor: pointer; 버튼에 마우스 올리면, 커서 모양이 손가락 모양으로 바뀜
+
+ / 는 잘 안 씀=루트로 가라
+ ./ 나와 어깨를 나란히 하는 곳으로 가라
+ ../ 부모 경로 찾아가라
+ 
+ ul은 li만 데리고 다님
+ ol도 li만 데리고 다님
+ strong-li 이건 안됨=h1이 20개 있는 거랑 같은 상황
+ 
+ ul :리스트를 가지고 있는 tag(번호가 없는 list) ---li가 자식
+ ol : 번호가 있는 리스트 ---li가 자식
+ dl :  설명(description)을 리스트 형식으로 정의 ---dt(굵게 사용) dd가 자식
+       용어(term)나 이름(name)을 나타내는 dt요소와 해당 용어에 대한 설명을 나타내는 dd요소로 구성
+ 
+                 </pre>
+
+        <li>
+            <p><a href="../trn01/index.html">DK-steel 홈페이지를 만들어보자(3)_마무리</a></p>
+            <em>2022.05.27.FRI</em>
+            <p>1. 1200px box안에 사진 3개 넣기
+                2. 1200px box를 만든 후, 사진 6개와 전화번호 부분 만들기<br>
+                3. 커스터머 box 만들기-회사소개/견적문의하기/로고/배경 사진 깔기<br>
+                4. address tag 사용</p>
+            <!--  -->
+            <!--  -->
+            <p><small> 드디어 홈페이지 완성
+                </small></p>
+            <pre>
+-address tag :문서나 글의 저자 또는 회사와 연락할 수 있는 정보를 명시할 때 사용하며 이탤릭체(italic)로 표현된다-->font-style: normal을 주면 됨
+
+-z-index: 999;를 줘서 가장 위에 올라오게 사용함
+ 
+                 </pre>
+
+        <li>
+            <p><a href="./doc/basic01.html">반응형</a></p>
+            <em>2022.05.30.MON</em>
+            <p>1. 반응형 <br> --> @media (max-width: 768px){속성값}<br />
+                2. positon, displpay 활용
+            </p>
+            <!--  -->
+            <!--  -->
+            <p><small> 반응형 가볍게 배웠다.
+                </small></p>
+            <pre>
+        - 반응형: 모바일에서 볼 수 있도록 하는 것
+        따로 html을 만들지 않고, css만으로 만든다.
+        display와 position에 대한 이해가 중요!
+
+        **div class="on"
+        -> ss: div.on
+        -> jquery: $('div').toggleClass('on')
+        -> document.querySelecto('div').classlist.toggle('on')
+
+        - css는 대소문자를 구분한다.
+        *대표적인 표기법
+        케밥 표기법(Kebab-Case)
+        카멜 표기법(camelCase)
+        파스칼 표기법(PascalCase)
+        스네이크 표기법(Snake_Case)
+
+         
+                         </pre>
 
 
-
-
-    </ol>
 
     </ol>
 
