@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022.06.07. hover 01</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        section {
+            padding: 100px 0;
+            text-align: center;
+
+        }
+
+        section h2 {
+            font-size: 24px;
+            font-weight: 500;
+            letter-spacing: -0.025em;
+            /* 자간을 의미하며, em(폰트 사이즈의 배수)을 사용한다.
+            한글 자간은 붙여서 사용
+            0.5em은 1000의 500 */
+            margin: 0 0 10px 0;
+        }
+
+        section p {
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: -0.025em;
+            /* 자간을 의미하며, em(폰트 사이즈의 배수)을 사용한다. */
+            margin: 0 0 30px 0;
+            /* 셋뚜바리 */
+        }
+
+        section .container {
+            display: flex;
+            /* container의 자식들만 display:flex됨 */
+            gap: 30px;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        section .container figure {
+            position: relative;
+            flex: 1;
+            overflow: hidden;
+            /* x축 y축 모두 숨기는 */
+        }
+
+        /* flex:1을 컨테이너에 줄 수 없는가 */
+
+        section img {
+            max-width: 100%;
+        }
+
+        .hover01 .container figure .box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: rgba(51, 51, 51, 1);
+            /* opacity: 0.3; 박스 내부의 모든 걸 투명하게 만드는 opacity=> 그래서 background를 투명하게 하고 싶으면 rgba에서 알파값을 준다 */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            /* 좌우 가운데 */
+            align-items: center;
+            /* 아래위 가운데 */
+            transition: width 0.5s;
+        }
+
+        .hover01 .container figure:hover .box {
+            width: 150px;
+
+        }
+
+        .hover01 .container figure img {
+            transition: transform 0.5s;
+        }
+
+        .hover01 .container figure:hover img {
+            transform: translateX(100px);
+        }
+
+        .hover02 {
+            padding: 100px 0;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .hover02 h2 {
+            font-size: 24px;
+            font-weight: 500;
+            letter-spacing: -0.025em;
+            /* 자간을 의미하며, em(폰트 사이즈의 배수)을 사용한다.
+            한글 자간은 붙여서 사용
+            0.5em은 1000의 500 */
+            margin: 0 0 10px 0;
+        }
+
+        .hover02 p {
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: -0.025em;
+            /* 자간을 의미하며, em(폰트 사이즈의 배수)을 사용한다. */
+            margin: 0 0 30px 0;
+            /* 셋뚜바리 */
+        }
+
+        .hover02 .container {
+            display: flex;
+            /* container의 자식들만 display:flex됨 */
+            gap: 30px;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hover02 .container figure {
+            position: relative;
+            flex: 1;
+            /* x축 y축 모두 숨기는 */
+            /* flex:1을 컨테이너에 줄 수 없는가 */
+        }
+
+        .hover02 .container figure::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-top: 1px solid #000;
+            border-left: 1px solid #000;
+            transition: 0.5s;
+            box-sizing: border-box;
+            /* 삐져나가는 선을 정리할 수 있음 */
+            opacity: 0;
+        }
+
+        .hover02 .container figure::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-bottom: 1px solid #000;
+            border-right: 1px solid #000;
+            transition: 0.5s 0.3s;
+            box-sizing: border-box;
+            /* 삐져나가는 선을 정리할 수 있음 */
+            opacity: 0;
+        }
+
+        .hover02 .container figure:hover::before {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            /* opacity를 0을 주고, 호버에서 1을 주면 검은 색 점은 없어지고, 제대로 border가 작동한다 */
+        }
+
+        .hover02 .container figure:hover::after {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+        }
+
+        .hover02 img {
+            max-width: 100%;
+        }
+
+        nav {
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        nav>ul {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav>ul>li {
+            position: relative;
+            flex: 1;
+            border-left: 1px solid #ddd;
+        }
+
+        nav>ul>li::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: #f00;
+            transition: 0.5s;
+        }
+
+        nav>ul>li:hover::after {
+            width: 100%;
+        }
+
+        nav>ul>li:last-child {
+            border-right: 1px solid #ddd;
+        }
+
+        nav>ul>li a {
+            display: block;
+        }
+
+        .hover03 figure::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 10px;
+            background: linear-gradient(to left,
+                    #7f7fd5, #86A8E7, #91eae4);
+            transition: 0.5s 1.5s;
+        }
+
+        .hover03 figure:hover::before {
+            width: 100%;
+            transition: 0.5s;
+        }
+
+        .hover03 figure::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 0;
+            background: linear-gradient(to bottom, #7f7fd5, #86A8E7, #91eae4);
+            transition: 0.5s 1s;
+
+        }
+
+        .hover03 figure:hover::after {
+            height: 100%;
+            transition: 0.5s 0.5s;
+        }
+
+        .hover03 figure .box::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 10px;
+            background: linear-gradient(to right, #7f7fd5, #86A8E7, #91eae4);
+            transition: 0.5s 0.5s;
+        }
+
+        .hover03 figure:hover .box::before {
+            width: 100%;
+            transition: 0.5s 1s;
+        }
+
+        .hover03 figure .box::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 10px;
+            height: 0;
+            background: linear-gradient(to bottom, #91eae4, #86A8E7, #7f7fd5);
+            transition: 0.5s;
+        }
+
+        .hover03 figure:hover .box::after {
+            height: 100%;
+            transition: 0.5s 1.5s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="">MENU01</a></li>
+            <li><a href="">MENU02</a></li>
+            <li><a href="">MENU03</a></li>
+            <li><a href="">MENU04</a></li>
+            <li><a href="">MENU05</a></li>
+        </ul>
+    </nav>
+
+    <section class="hover01">
+        <h2>hover를 사용해서 position을 배운다.</h2>
+        <p>hover를 이용한 position 이해를 배우면서 이쁜 걸 만들어본다.</p>
+        <div class="container">
+            <figure>
+                <img src="../img/lesedilarona01.jpg" alt="">
+                <div class="box">
+                    <a href="">HOVER</a>
+                </div>
+            </figure>
+            <figure>
+                <img src="../img/lesedilarona02.jpg" alt="">
+                <div class="box">
+                    <a href=""><i class="xi-cart-add"></i></a>
+            </figure>
+            <figure>
+                <img src="../img/lesedilarona03.jpg" alt="">
+                <div class="box">
+                    <a href=""><i class="xi-share-alt"></i></a>
+            </figure>
+        </div>
+    </section>
+
+    <section class="hover02">
+        <h2>hover를 사용해서 position을 배운다.</h2>
+        <p>hover를 이용한 position 이해를 배우면서 이쁜 걸 만들어본다.</p>
+        <div class="container">
+            <figure>
+                <img src="../img/lesedilarona01.jpg" alt="">
+
+            </figure>
+            <figure>
+                <img src="../img/lesedilarona02.jpg" alt="">
+
+            </figure>
+            <figure>
+                <img src="../img/lesedilarona03.jpg" alt="">
+            </figure>
+        </div>
+    </section>
+
+    <section class="hover03">
+        <h2>hover를 사용해서 position을 배운다.</h2>
+        <p>hover를 이용한 position 이해를 배우면서 이쁜 걸 만들어본다.</p>
+        <div class="container">
+            <figure>
+                <div class="box">
+
+                    <img src="../img/lesedilarona01.jpg" alt="">
+                </div>
+            </figure>
+
+
+            <figure>
+                <div class="box">
+
+                    <img src="../img/lesedilarona02.jpg" alt="">
+                </div>
+            </figure>
+
+
+            <figure>
+                <div class="box">
+                    <img src="../img/lesedilarona03.jpg" alt="">
+                </div>
+            </figure>
+        </div>
+    </section>
+</body>
+
+</html>
