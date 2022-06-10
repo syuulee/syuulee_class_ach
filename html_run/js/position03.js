@@ -12,3 +12,5 @@ $(function () {
     $("html, body").animate({ scrollTop: idx * (h + 1) }, 1000);
   });
 });
+
+
