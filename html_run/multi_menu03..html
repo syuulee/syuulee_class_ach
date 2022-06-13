@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2022.06.10. 다단메뉴03</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/basic01.css" />
+    <style>
+      .header {
+        line-height: 100px;
+      }
+
+      .header .container {
+        display: flex;
+        width: 1200px;
+        margin: 0 auto;
+      }
+
+      .header .gnb {
+        margin: 0 0 0 auto;
+      }
+
+      .header .gnb > ul {
+        display: flex;
+        /* gap: 50px; 대신에 padding을 줘도 됨. 
+            li에 줘도 되고, a에 주면 menu에 마우스를 올리고 옆으로 옮겨도 포인트 커서가 끊기지 않음*/
+      }
+
+      .header .gnb > ul > li {
+        position: relative;
+      }
+
+      /* position: relative;
+           좌표의 기준도 되지만, 높이 넓이의 기준도 됨
+         - 포지션 기준점이 생기면 높이 100%는 안 먹음*/
+
+      .header .gnb > ul > li a {
+        display: block;
+        /* a태그는 inline요소여서 글자사이즈대로 있는 상태였고 display: block을 주면 박스 특성을 가지면서 글자가 펴짐 */
+        padding: 0 25px;
+      }
+
+      .header .gnb > ul > li ul {
+        display: none;
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        z-index: 999;
+        width: 150px;
+        /* absolute 떠있는 상태여서 ul의 ul width는 변함없음  */
+        line-height: 40px;
+        transform: translate(-50%);
+        text-align: center;
+        background: #ff0;
+      }
+
+      .header .gnb > ul > li:hover ul {
+        display: block;
+      }
+
+      .mbtn {
+        display: none;
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        font-size: 30px;
+        background: #f7f7f7;
+        padding: 5px;
+        line-height: 1;
+      }
+
+      @media (max-width: 768px) {
+        .header {
+          line-height: 100px;
+        }
+
+        .header .container {
+          display: flex;
+          width: auto;
+          margin: 0 auto;
+          /* 1200px이 되면 밑에 스크롤바가 생기기 때문 와이드 auto로 하고 
+                  */
+        }
+
+        .header .gnb {
+          position: fixed;
+          top: 0;
+          left: -100%;
+          z-index: 999;
+          width: calc(100% - 90px);
+          height: 100vh;
+          /* z인덱스는 자식이 부모(제트인덱스=0)를 이길 수 없고, 나중에 생긴 메인의 제트인덱스=0이어서 
+                부모 제트인덱스를 위로 올려줌 */
+          background: #fff;
+          margin: 0 0 0 auto;
+          transition: 0.5s;
+        }
+
+        .header .gnb.on {
+          left: 0;
+        }
+
+        .header .gnb > ul {
+          display: flex;
+          flex-direction: column;
+          /* gap: 50px; 대신에 padding을 줘도 됨. 
+            li에 줘도 되고, a에 주면 menu에 마우스를 올리고 옆으로 옮겨도 포인트 커서가 끊기지 않음*/
+          line-height: 40px;
+        }
+
+        .header .gnb > ul > li {
+          position: relative;
+        }
+
+        /* position: relative;
+           좌표의 기준도 되지만, 높이 넓이의 기준도 됨
+         - 포지션 기준점이 생기면 높이 100%는 안 먹음*/
+
+        .header .gnb > ul > li a {
+          display: block;
+          /* a태그는 inline요소여서 글자사이즈대로 있는 상태였고 display: block을 주면 박스 특성을 가지면서 글자가 펴짐 */
+          padding: 0 25px;
+        }
+
+        .header .gnb > ul > li ul {
+          display: none;
+          position: static;
+          top: 100px;
+          left: 50%;
+          z-index: 999;
+          width: auto;
+          /* absolute 떠있는 상태여서 ul의 ul width는 변함없음  */
+          line-height: 40px;
+          transform: translate(0);
+          text-align: center;
+          background: #ff0;
+        }
+
+        .header .gnb > ul > li:hover ul {
+          display: none;
+        }
+
+        .mbtn {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="Wrap">
+      <header class="header">
+        <div class="container">
+          <h1>
+            <a href="/">
+              <img src="../img/logopage.png" alt="" />
+            </a>
+          </h1>
+          <nav class="gnb">
+            <ul>
+              <li>
+                <a href="">MENU01</a>
+                <ul>
+                  <li><a href="">smenu01</a></li>
+                  <li><a href="">smenu02</a></li>
+                  <li><a href="">smenu03</a></li>
+                  <li><a href="">smenu04</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="">MENU02</a>
+                <ul>
+                  <li><a href="">smenu01</a></li>
+                  <li><a href="">smenu02</a></li>
+                  <li><a href="">smenu03</a></li>
+                  <li><a href="">smenu04</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="">MENU03</a>
+                <ul>
+                  <li><a href="">smenu01</a></li>
+                  <li><a href="">smenu02</a></li>
+                  <li><a href="">smenu03</a></li>
+                  <li><a href="">smenu04</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="">MENU04</a>
+                <ul>
+                  <li><a href="">smenu01</a></li>
+                  <li><a href="">smenu02</a></li>
+                  <li><a href="">smenu03</a></li>
+                  <li><a href="">smenu04</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="">MENU05</a>
+                <ul>
+                  <li><a href="">smenu01</a></li>
+                  <li><a href="">smenu02</a></li>
+                  <li><a href="">smenu03</a></li>
+                  <li><a href="">smenu04</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="">MENU06</a>
+                <ul>
+                  <li><a href="">smenu01</a></li>
+                  <li><a href="">smenu02</a></li>
+                  <li><a href="">smenu03</a></li>
+                  <li><a href="">smenu04</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <div class="mbtn">
+            <i class="xi-bars"></i>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="main_visual"></div>
+      </main>
+      <footer class="footer">&copy; basic template.</footer>
+    </div>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(function () {
+        $(".gnb>ul>li>a").on("click", function (e) {
+          if ($(".gnb").hasClass("on")) {
+            e.preventDefault();
+            //$('.gnb>ul>li>a').next().hide();
+            $(this).next().stop().slideToggle();
+            $(this).parent().siblings().find("ul").stop().slideUp();
+
+            //find('ul') 또는 children('ul')
+            //slideDown()=show() slideUp()=hide() 부드럽게 해줌
+            //slideToggle()은 슬라이드 된 걸 클릭하면 사라지는
+            //마우스를 여러번 움직일때, 이전 애니메이션이 멈추기 전까지 애니메이션이 동작하지 않는 현상이 바로 애니메이션 큐로 인해 발생하는 문제이다==stop을 사용한다.
+          }
+        });
+
+        $(window).on("resize", function () {
+          $(".gnb").removeClass("on");
+          $(".gnb>ul ul").removeAttr("style");
+        });
+
+        $(".mbtn").on("click", function () {
+          $(".gnb").toggleClass("on");
+          $(".gnb>ul>li>a").next().stop().slideUp();
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- <a href="#!">link</a>에 쓰면 위로 올라가지 않음(포폴, 시안 만들 때 이렇게 씀)  하지만 자바스크립트에서는 문제가 됨=이벤트가 없어지기 때문에 조심히 써야함-->
+
+<!-- 
+/ 루트로 가라=서버 인덱스(~~~co.kr)를 찾아가라 보통d드라이브까지 가버림
+./  나와 어깨를 나란히 하는//폴더안에서 찾으라==생략이 가능 ../css -> css/
+../  부모로 한 칸 올라가라-->
+
+<!-- 인덱스 번호 -->
+
+<!-- siblings 나 말고 나의 형제 -->
