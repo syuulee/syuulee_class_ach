@@ -29,4 +29,5 @@ img {
   /* max-width: 100%;
   반응형 할 때 많이 쓰는 맥스와이드 100% */
   vertical-align: middle;
+  max-width: 100%;
 }
