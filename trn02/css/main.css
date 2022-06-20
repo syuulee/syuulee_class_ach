@@ -1,0 +1,249 @@
+.Wrap {}
+
+.container {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 2020.06.20. lsy topBanner */
+
+.topBanner {
+    padding: 30px 0;
+    background: #f1f1f1;
+}
+
+.topBanner .inner {
+    position: relative;
+}
+
+.topBanner h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.topBanner p {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.topBanner a {
+    margin: 0 0 0 10px;
+    padding: 3px 15px 5px 15px;
+    /*아래 위로 패딩이 들어간 것처럼 보이는 것! 오해금지 */
+    background: #333;
+    color: #fff;
+}
+
+.topBanner i {
+    position: absolute;
+    inset: 0 0 auto auto;
+    font-size: 21px;
+    padding: 5px;
+    background: #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#header {
+    line-height: 100px;
+    border-bottom: 1px solid #ddd;
+}
+
+#header .container {
+    justify-content: space-between;
+}
+
+#header nav>ul {
+    display: flex;
+}
+
+#header nav>ul>li>a {
+    padding: 0 15px;
+    font-size: 17px;
+}
+
+#header nav>ul>li~li::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 14px;
+    background: #ddd;
+}
+
+#header a {
+    display: inline-block;
+}
+
+#searchForm input[type="text"] {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #333;
+    padding: 5px 0;
+    color: skyblue;
+}
+
+#searchForm input[type="text"]::placeholder {
+    color: skyblue;
+}
+
+#searchForm input[type="text"]:focus::placeholder {
+    opacity: 0;
+    /* display:none은 안됨 */
+}
+
+#searchForm button {
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 21px;
+
+}
+
+
+.mainVisual {
+    position: relative;
+}
+
+.mainVisual .mainSlider figure {
+    position: relative;
+    height: 600px;
+}
+
+.mainVisual .mainSlider .itm01 {
+    background: url(../img/mainvisual01.jpg) no-repeat center center/cover;
+}
+
+.mainVisual .mainSlider .itm02 {
+    background: url(../img/mainvisual02.jpg) no-repeat center center/cover;
+}
+
+.mainVisual .mainSlider .itm03 {
+    background: url(../img/mainvisual03.jpg) no-repeat center center/cover;
+}
+
+.mainVisual .mainSlider .inner {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+}
+
+.mainVisual .mainSlider .inner h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.mainVisual .mainSlider .inner p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 10px 0;
+}
+
+.mainVisual .mainSlider .inner a {
+    display: inline-block;
+    /* 자연스럽게 콘텐츠 사이즈에 맞게 쪼그라든다.
+    block을 주면 width를 줄 수 있으나, 글자가 늘어나면 width가 유지된 상태에서 글자가 들어가기 때문에 유연성이 없다. 그래서 inline-block을 주고 padding을 주면 됨*/
+    padding: 5px 20px;
+    background: #333;
+
+}
+
+.mainVisual .mainSlider figure h2 {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.mainVisual .mainSlider figure.on h2 {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.mainVisual .mainSlider figure p {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.mainVisual .mainSlider figure.on p {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 0.5s;
+}
+
+.mainVisual .mainSlider figure a {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.mainVisual .mainSlider figure.on a {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 1s;
+}
+
+.mainVisual .mainSlider .slick-dots {
+    position: absolute;
+    inset: auto auto 100px 50%;
+    transform: translateX(-50%);
+}
+
+.mainVisual .mainSlider .slick-dots li {
+    display: inline-block;
+
+}
+
+.mainVisual .mainSlider .slick-dots button {
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    width: 22px;
+    height: 22px;
+    margin: 0 2px;
+}
+
+.mainVisual .mainSlider .slick-dots li.slick-active button {
+    background: #f00;
+    color: #fff;
+}
+
+.slideNum {
+    position: absolute;
+    inset: 50px auto auto 50%;
+    /* 0을 주면 박스가 이상하게 늘어나기 때문에 auto를 준다 */
+    margin: 0 0 0 600px;
+    transform: translateX(-100%);
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+    font-size: 41px;
+}
+
+.mainArrow i {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 100px;
+}
+
+.mainArrow i.on {
+    color: rgba(0, 0, 255, 0.5);
+}
+
+.mainArrow i:nth-child(1) {
+    margin: 0 0 0 -700px;
+    /* 1200 박스 밖으로 나가야함 */
+}
+
+.mainArrow i:nth-child(2) {
+    margin: 0 0 0 700px;
+    /* 1200 박스 밖으로 나가야함 */
+}
