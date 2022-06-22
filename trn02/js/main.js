@@ -36,4 +36,22 @@ $(function () {
     $('.mainArrow i:nth-child(2)').on('click', function () {
         $('.mainSlider').slick('slickNext')
     });
+
+
+    $('#ytb').YTPlayer({
+        videoURL: 'https://youtu.be/SQgBNoP6EIo',
+        containment: '.ytb',
+        autoPlay: true,
+        mute: true,
+        startAt: 0,
+        opacity: 1,
+        showControls: false,
+        playOnlyIfVisible: true,
+        startAt: 5,
+    });
+
+    $('.ytb .zoom ').on('click', function (e) {
+        e.preventDefault();
+        $('#ytb').YTPFullscreen()
+    })
 })

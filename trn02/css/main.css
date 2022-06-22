@@ -453,7 +453,7 @@
 
 .fixedBg2 {
     padding: 100px 0;
-    margin: 0 0 100vh 0;
+    /* margin: 0 0 100vh 0; */
     text-align: center;
     color: #fff;
     background: url(../img/mainvisual01.jpg) no-repeat fixed center center/cover;
@@ -476,4 +476,78 @@
     background: #f00;
     vertical-align: -10%;
     border-radius: 50%;
+}
+
+.service {
+    padding: 100px 0;
+}
+
+.service .container {
+    gap: 30px;
+}
+
+.service .container>div {
+    /* position: relative;
+    padding-bottom: 56.28%; */
+    flex: 1;
+    /* 사이즈가 스트레치됨 유튜브 동영상 자체의 높이를 받은 상태 근데 옆에 map도 absolute로 띄우고, inset을 0으로 다 주면 높이 자체가 없어지기 때문에 사라짐 */
+    /* flex를 주면 스트레치됨(=늘어남) 그래서 박스로 싸서 스트레치 되는 걸 막는다. */
+}
+
+.service .container .case {
+    position: relative;
+    padding-bottom: 56.25%;
+}
+
+.service .container iframe {
+    position: absolute;
+    inset: 0 0 0 0;
+}
+
+.service .container .root_daum_roughmap {
+    position: absolute;
+    inset: 0 0 0 0;
+    width: 100%;
+}
+
+.service .container .root_daum_roughmap .wrap_map {
+    height: 100%;
+}
+
+.ytb {
+    padding: 100px 0;
+    color: #fff;
+    text-align: center;
+    filter: grayscale(1);
+}
+
+.ytb h2 {
+    margin: 0 0 10px 0;
+    font-size: 19px;
+    font-weight: 700px;
+}
+
+.ytb p {
+    margin: 0 0 30px 0;
+    font-size: 15px;
+    font-weight: 300px;
+}
+
+.ytb i {
+    padding: 5px;
+    background: #333;
+    vertical-align: 0;
+    border-radius: 50%;
+}
+
+.scrollMe {
+    padding: 200px 0;
+}
+
+.scrollMe .container {
+    gap: 70px;
+}
+
+.scrollMe .container figure {
+    flex: 1;
 }
