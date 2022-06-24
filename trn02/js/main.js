@@ -102,6 +102,12 @@ $(function () {
         } else {
             $('.toTop').fadeOut(1000)
         }
+    });
+
+    $('#fl').on('change', function () {
+        console.log($(this), $(this).val())
+        var lnk = $(this).val();
+        lnk && window.open(lnk);
     })
 })
 
@@ -109,3 +115,7 @@ $(function () {
 
 // $('.tab_content>div').eq(idx).addClass('on').removeClass('on')
 //   $('html,body').animate({ scrollTop: 0 }, 200<-속도/기본은 400(0.4s))
+
+// if (lnk) {
+//     window.open(lnk);
+// 링크에 공백이 있으면 연결됨<-주의}
