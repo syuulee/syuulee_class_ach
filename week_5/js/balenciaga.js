@@ -21,14 +21,7 @@ $(function () {
     $('.to_top').on('click', function () {
         $('html,body').animate({ scrollTop: 0 }, 200);
     });
-    $(window).on('scroll', function () {
-        var up = $(window).scrollTop();
-        if (up > 1200) {
-            $('.to_top').fadeIn(1000);
-        } else {
-            $('.to_top').fadeOut(100);
-        }
-    });
+
 
     const PIC = document.querySelector('.fashion_pic')
     // PIC.forEach(function (el) {
@@ -47,6 +40,31 @@ $(function () {
         })
         el.classList.add('on');
     })
+
+    $('.to_top').on('click', function () {
+        $('html,body').animate({ scrollTop: 0 }, 200);
+    });
+    $(window).scroll(function () {
+        var up = $(window).scrollTop();
+        console.log(up)
+        if (up > 500) {
+            $('.to_top').fadeIn(300);
+            $('.to_top').addClass('on')
+        } else {
+            $('.to_top').fadeOut(1000);
+            $('.to_top').removeClass('on')
+        }
+    });
+    // $(window).on('scroll', function () {
+    //     var sct = $(window).scrollTop();
+    //     console.log(sct)
+    //     if (sct > 870) {
+    //         $('.to_top').fadeIn(200);
+    //     } else {
+    //         $('.to_top').fadeOut(500);
+    //     }
+
+    // })
 })
 
 

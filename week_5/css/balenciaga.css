@@ -396,7 +396,11 @@ a {
     width: 80px;
     height: 80px;
     cursor: pointer;
+    /* display: none; */
+}
 
+.to_top figure.on {
+    display: block;
 }
 
 .to_top figure img {
