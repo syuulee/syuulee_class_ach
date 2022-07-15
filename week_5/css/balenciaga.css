@@ -2,11 +2,11 @@
     position: relative;
 }
 
-/* * {
+* {
     outline: 1px solid #253E66
-} */
+}
 
-h1,
+*/ h1,
 h2,
 li,
 span,
@@ -390,23 +390,32 @@ a {
 .to_top {
     position: fixed;
     inset: auto 5% 5% auto;
+    width: 80px;
+    height: 80px;
+    background: url(../img/top_button.png) no-repeat center center/cover;
+    display: none;
+    animation: round 6s linear infinite;
+    transform-origin: 50% 50%;
 }
 
+/* 
 .to_top figure {
     width: 80px;
     height: 80px;
     cursor: pointer;
-    /* display: none; */
-}
 
-.to_top figure.on {
+} */
+
+/* .to_top figure.on {
     display: block;
-}
+} */
 
-.to_top figure img {
-    animation: round 6s linear infinite;
-    transform-origin: 50% 50%;
-}
+/* .to_top figure img {
+    width: 80px;
+    height: 80px;
+    /* animation: round 6s linear infinite;
+    transform-origin: 50% 50%; */
+
 
 @keyframes round {
     100% {

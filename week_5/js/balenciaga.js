@@ -44,15 +44,16 @@ $(function () {
     $('.to_top').on('click', function () {
         $('html,body').animate({ scrollTop: 0 }, 200);
     });
-    $(window).scroll(function () {
+
+    $(window).on('scroll', function () {
         var up = $(window).scrollTop();
         console.log(up)
         if (up > 500) {
             $('.to_top').fadeIn(300);
-            $('.to_top').addClass('on')
+            // $('.to_top').addClass('on')
         } else {
             $('.to_top').fadeOut(1000);
-            $('.to_top').removeClass('on')
+            // $('.to_top').removeClass('on')
         }
     });
     // $(window).on('scroll', function () {
