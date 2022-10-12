@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022.06.03. display / display 01</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* inline 요소는 widtih height 상하margin/padding 값을 줄 수가 없다. */
+        .inline span {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 0, 0, 0.3);
+            /* rgba(255, 0, 0, 0.3)에서 마지막에 0.3을 주면 투명하게 해줌 */
+            /* 백그라운드는 차지하는데 패딩이 먹지는 않는다. */
+            color: #fff;
+            padding: 50px 0;
+            margin: 50px 0;
+        }
+
+        /* inline 요소는 block 요소로 바꿈 */
+        .inlineToBlock span {
+            display: block;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 0, 0, 0.3);
+            /* rgba(255, 0, 0, 0.3)에서 마지막에 0.3을 주면 투명하게 해줌 */
+            /* 패딩은 공간을 차지 하지 않는대, 백그라운드는 차지해서 패딩이 적용된 것처럼 보인다. */
+            color: #fff;
+            padding: 30px 0;
+            margin: 30px 0;
+        }
+
+        /* inline-block 요소의 부모에 text-align:center로 박스를 가로로 배열할 수 있다.
+        inline-block 요소의 간격을 붙이려면 font-size: 0;을 해줘야 한다.  */
+        .inlineToInlineblock {
+            text-align: center;
+            font-size: 0;
+            /* 폰트가 사라진다, 대신 공간은 붙음. */
+        }
+
+
+        /* inline 요소는 inline-block 요소로 바꿈.
+        박스 사이의 간격이 4px정도 생긴다. */
+        .inlineToInlineblock span {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            font-size: 20px;
+            /* 부모에세 폰트 사이즈를 상속받아서 없어졌다가, 자식 부분에서 다시 폰트 사이즈를 주면 폰트가 나타남 */
+            background: rgba(255, 0, 0, 0.3);
+            /* rgba(255, 0, 0, 0.3)에서 마지막에 0.3을 주면 투명하게 해줌 */
+            color: #fff;
+            padding: 30px 0;
+            margin: 30px 0;
+        }
+
+        .block {
+            background: #ff0;
+        }
+
+        .block div {
+            display: inline;
+            width: 100px;
+            height: 100px;
+            font-size: 20px;
+            /* 부모에세 폰트 사이즈를 상속받아서 없어졌다가, 자식 부분에서 다시 폰트 사이즈를 주면 폰트가 나타남 */
+            background: rgba(255, 0, 0, 0.3);
+            /* rgba(255, 0, 0, 0.3)에서 마지막에 0.3을 주면 투명하게 해줌 */
+            color: #fff;
+            padding: 30px 0;
+            margin: 30px 0;
+            /* display: inline;을 적용하기 전에 마진겹침현상으로 인해, 위로는 마진이 안 먹어서 아래로 마진을 줘야함 */
+        }
+    </style>
+</head>
+
+<body>
+    <section class="inline">
+        <span>span01</span>
+        <span>span02</span>
+        <span>span03</span>
+        <span>span04</span>
+        <span>span05</span><br />
+
+        <span>span01</span>
+        <span>span02</span>
+        <span>span03</span>
+        <span>span04</span>
+        <span>span05</span><br />
+    </section>
+
+    <section class="inlineToBlock">
+        <span>span01</span>
+        <span>span02</span>
+        <span>span03</span>
+        <span>span04</span>
+        <span>span05</span><br />
+    </section>
+
+    <section class="inlineToInlineblock">
+        <span>span01</span>
+        <span>span02</span>
+        <span>span03</span>
+        <span>span04</span>
+        <span>span05</span><br />
+    </section>
+
+    <section class="block">
+        <div>BOX01</div>
+        <div>BOX02</div>
+        <div>BOX03</div>
+        <div>BOX04</div>
+        <div>BOX05</div>
+    </section>
+</body>
+
+</html>

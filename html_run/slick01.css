@@ -1,0 +1,147 @@
+img {
+    max-width: 100%;
+}
+
+.visual_slider figure {
+    height: 600px;
+}
+
+/* figure에 높이를 줘야, 피규어 안에 내용물의 높이가 생기기 때문에,
+버튼 사이가 벌어짐 */
+
+.visual_slider .itm01 {
+    background: url(../img/mainvisual01.jpg) no-repeat center center/cover;
+}
+
+/* 백그라운드 : 
+background: url(../img/mainvisual01.jpg) no-repeat center center/cover; 
+ 센터센터는 아래위로 센터, 좌우로 센터, cover는 채워라*/
+
+.visual_slider .itm02 {
+    background: url(../img/mainvisual02.jpg) no-repeat center center/cover;
+}
+
+.visual_slider .itm03 {
+    background: url(../img/mainvisual03.jpg) no-repeat center center/cover;
+}
+
+.main {
+    position: relative;
+}
+
+.main .slogan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+}
+
+.main .slick-dots {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* .slick-track에 position:relative가 되어 있음 */
+
+.main .slick-dots li {
+    display: inline-block;
+    width: 100px;
+    height: 6px;
+    background: #333;
+    margin: 0 2px;
+}
+
+/* 인라인블록을 하면 원래 사이가 뜨지만 slick에 설정이 되어 있어 사이가 떨어지지 않음
+ .main .slick-dots li button에 display: none;을 하면 버튼이 사라진다. 그러고 나서,
+ li에 높이, 넓이 색을 주고 마진을 양쪽으로 주면 bar가 생기고 사이에 간격이 생김*/
+
+.main .slick-dots li::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    background: #f00;
+}
+
+.main .slick-dots li.slick-active::after {
+    width: 100%;
+    transition: 3s;
+}
+
+.main .slick-dots li button {
+    display: none;
+}
+
+.main .slick-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+
+    font-size: 0;
+    border: none;
+    background: transparent;
+
+    width: 100px;
+    height: 100px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    opacity: 0.3;
+}
+
+/* 포지션 제트인덱스는 오토임 */
+
+.main .slick-arrow:hover {
+    opacity: 1;
+    transition: border 0.5s;
+}
+
+.main .slick-prev {
+    margin: 0 0 0 -700px;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.main .slick-next {
+    margin: 0 0 0 700px;
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+/* 마진으로 조정하는 경우, 반응형에 오면 바꿔야함 
+겹칠려면 띄워야함. 겹치는 순서가 있음
+transform은 뒤에 온 거가 앞에거 덮어 씌움*/
+
+.main .wheel {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 30px;
+    height: 55px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    font-size: 0;
+}
+
+.main .wheel span {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 12px;
+    background: #fff;
+    border-radius: 1px;
+    animation: wheel 1s infinite;
+}
+
+@keyframes wheel {
+    to {
+        top: 15px;
+    }
+}

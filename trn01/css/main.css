@@ -1,0 +1,347 @@
+:root {
+  --mc: #dc3545;
+  --gc: #dddddd;
+  --wc: #f8f9fa;
+  --dc: #000;
+}
+
+html {
+  font-size: 20px;
+}
+/*기본 폰트 사이즈를 20px*/
+
+body {
+  font-size: 0.8rem;
+}
+/*0.8rem=16px*/
+
+.top_banner {
+  border-top: 2px solid var(--mc);
+  border-bottom: 1px solid var(--gc);
+  font-size: 0.65rem;
+  line-height: 1.5rem;
+}
+/* ling-height는 메뉴 만들 때 좋음 */
+
+.top_banner .container {
+  display: flex;
+  justify-content: flex-end;
+  width: 60rem;
+  margin: 0 auto;
+}
+
+.top_banner li {
+  border-right: 1px solid #ddd;
+  padding: 0 10px;
+}
+/*a영역은 충분히 클릭할 수 잇도록 영역을 잡는 것이 rule*/
+
+.header {
+  line-height: 5rem;
+}
+
+.header .container {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header h1 img {
+  width: 300px;
+}
+
+.header nav {
+  margin: 0 0 0 auto;
+}
+
+.header nav > ul {
+  display: flex;
+  gap: 1.5rem;
+}
+/* 메뉴는 부모자식 확실히 하는 게 좋음 ">" 사용 */
+
+.header nav > ul a {
+  display: block;
+  font-size: 0.85rem;
+}
+
+.header nav > ul > li {
+  position: relative;
+}
+
+.header nav > ul > li ~ li::before {
+  content: '';
+  position: absolute;
+  inset: 50% auto auto -1rem;
+  width: 1px;
+  height: 0.6rem;
+  background: var(--gc);
+  transform: translateY(-50%);
+}
+/* li~li하면 맨앞에 있는 bar사라짐 */
+
+.header i {
+  font-size: 1.25rem;
+  padding: 0.25rem;
+  background: var(--gc);
+  border-radius: 3px;
+  margin: 0 0 0 1rem;
+  vertical-align: middle;
+}
+/* 아이콘은 폰트 웨이트 주면 안됨=폰트가 사라짐
+즉, 아이콘은 두껍게 할 수 없음 */
+
+.main_visual {
+  position: relative;
+}
+
+.main_visual::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/pt-bg01.png);
+}
+/* 사진 화질이 별로일 때, 픽셀 넣는 방법--after를 준다
+after를 주면 슬로건이 묻히기 때문에 z-index를 사용해서 올려준다. */
+/* width100%가 잘 안 먹힐 때가 있음 */
+
+.main_visual .main_slider img {
+  width: 100%;
+}
+
+.main_visual .slogan {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  text-align: right;
+  text-shadow: 0 0 2px var(--dc);
+  color: var(--wc);
+  z-index: 999;
+}
+/* z-index: 999;를 줘서 가장 위에 올라오게 사용함 */
+/* margin: 0 auto는 포지션에서 안 먹힘
+* 폰트 가독성에 문제가 생길 경우(배경이 깨끗하지 않을 때) text-shadow */
+
+.main_visual .slogan h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 2rem 0;
+}
+
+.main_visual .slogan h2::after {
+  content: '';
+  display: block;
+  width: 4rem;
+  height: 2px;
+  background: var(--wc);
+  margin: 1rem 5px 0 auto;
+}
+
+.main_visual .slogan p {
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.main_visual figure {
+  height: 30rem;
+}
+
+.main_visual .itm01 {
+  background: url(../img/main_bg01.jpg) no-repeat center center/ auto 100%;
+}
+.main_visual .itm01.on {
+  background: url(../img/main_bg01.jpg) no-repeat center center/ auto 120%;
+  transition: 2s;
+}
+.main_visual .itm02 {
+  background: url(../img/main_bg02.jpg) no-repeat center center/ auto 100%;
+}
+.main_visual .itm02.on {
+  background: url(../img/main_bg02.jpg) no-repeat center center/ auto 120%;
+  transition: 2s;
+}
+.main_visual .itm03 {
+  background: url(../img/main_bg03.jpg) no-repeat center center/ auto 100%;
+}
+.main_visual .itm03.on {
+  background: url(../img/main_bg03.jpg) no-repeat center center/ auto 120%;
+  transition: 2s;
+}
+/*슬라이드이미지를 백그라운드로 넣는 법 {
+  background: #f00 url(../img/main_banner01.jpg) no-repeat center center/ cover;
+ */
+/* background-size: cover 어떻게든 박스를 가득채워라-->주로 사용
+  background-size: contain 어떻게하든 백그라운드를 보여줘라-->거의 안 씀 */
+/* background-attachment: fixed 커버가 늘어나있는 상태에서 픽스드가 되면 고정됨. 패럴렉스?라고 함
+  스크롤을 내리면 이미지 고정된 상태이지만, 사진이 스크롤되는 효과를 보이게 함 */
+/* background-position:center center(X Y) */
+
+/* background에서 중요한 것이 이미지 경로
+ :html의 경로가 아닌 css에서 받는 경로
+ 즉, css에서 봤을 때 이미지 경로
+ 
+ 원래 사이즈를 기본으로 이미지가 반복됨->background-repeat: no-repeat;를 해줘야 이미지 반복이 안됨*/
+
+.content {
+  padding: 100px 0;
+}
+
+.content .container {
+  display: flex;
+  gap: 30px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.content figure {
+  flex: 1;
+}
+/* flex: 1;을 주는 이유는 사진 사이즈가 다를 경우, 
+주어진 박스 사이즈에 맞도록 사진들의 사이즈가 같아 지도록 하는 것
+그러니까, 1200px에 3개의 사진을 두려고 하면 한 사진당 400px의 사진크기여야한다. 그러나 만약 사진들의 사이즈가 다 다르면 400px에 들어가는 사진들이 각자 원레 사이즈에 따라 다르게 들어갈 것이므로 flex:1을 줘서 400px안에 같은 비율로 들어가게 하는 것이다.*/
+
+.content figure .box {
+  margin: 0 0 20px 0;
+  overflow: hidden;
+}
+/* box를 만들어서 그 안에 이미지tag를 넣어야 박스안에서 이미지가 확대/축소 되도록 해야함 */
+
+.content figure img {
+  transition: 0.5s;
+}
+
+.content figure:hover img {
+  transform: scale(1.5);
+}
+.content strong {
+  display: block;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0 0 17px 0;
+}
+
+.content p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.product {
+  padding: 30px 0;
+  border-top: 1px solid var(--gc);
+}
+
+.product .container {
+  display: flex;
+  gap: 30px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.product .container .left {
+  flex: 2;
+}
+/* 3칸 중 2칸 차지하라 */
+
+.product .container .right {
+  flex: 1;
+  line-height: 1.4;
+  border-left: 1px solid var(--gc);
+  padding: 15px 0 0 30px;
+}
+/* 3칸 중 1칸 차지하라 */
+
+.product .container .left ul {
+  display: flex;
+  gap: 10px;
+}
+
+.product .tel {
+  border-bottom: 1px solid var(--mc);
+  margin: 0 0 15px 0;
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 2;
+}
+
+.customer {
+  display: flex;
+}
+
+.customer > div {
+  flex: 1;
+}
+/* flex: 1;==하나씩 가져라ㅏㅏ */
+
+.customer .left {
+  text-align: right;
+  background: url(../img/main_banner01.jpg) no-repeat center center/cover;
+}
+
+.customer .right {
+  background: url(../img/main_banner02.jpg) no-repeat center center/cover;
+  border-left: 1px solid var(--gc);
+}
+
+.customer > div a {
+  display: block;
+  color: #fff;
+  padding: 50px 40px;
+  text-shadow: 0 0 3px var(--dc);
+  background: url(../img/pt-bg01.png);
+}
+
+.customer > div a h3 {
+  font-size: 31px;
+  font-weight: 500;
+  margin: 0 0 15px 0;
+}
+
+.customer > div a p {
+  font-size: 13px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.footer {
+  padding: 30px 0 50px 0;
+  font-size: 13px;
+}
+
+.footer .container {
+  display: flex;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.footer .logo {
+  flex: 1;
+}
+
+.footer address {
+  flex: 4;
+  font-style: normal;
+  padding: 30px 0 0 0;
+}
+
+.footer address ul {
+  margin: 0 0 10px 0;
+}
+
+.footer address ul li {
+  display: inline-block;
+}
+
+.footer address ul li ~ li::before {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 11px;
+  background: var(--gc);
+  margin: 0 7px;
+}

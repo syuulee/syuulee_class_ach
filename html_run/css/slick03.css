@@ -1,0 +1,173 @@
+#header {
+    line-height: 100px;
+    border-bottom: 1px solid #000;
+}
+
+#header .container {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#header .gnb>ul {
+    display: flex;
+    /* gap: 40px;을 안 주고, #header .gnb>ul a에 paddig을 줘서 간격을 주고, 마우스가 연결되도록 함  */
+}
+
+#header .gnb>ul a {
+    display: block;
+    padding: 0 20px;
+}
+
+#main {
+    position: relative;
+}
+
+.main_visual {
+    position: relative;
+}
+
+.main_slider figure {
+    position: relative;
+    /* .main_slider .inner의 기준이 slick에서 만든 div(track) 에 잡혀있어
+    figure의 늘어난 크기의 가운데에 위치하면서 3개가 겹쳐 있기 때문에 포지션으로 기준이 되어줘야함 */
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.main_slider .itm01 {
+    background-image: url(../img/mainvisual01.jpg);
+}
+
+.main_slider .itm02 {
+    background-image: url(../img/mainvisual02.jpg);
+}
+
+.main_slider .itm03 {
+    background-image: url(../img/mainvisual03.jpg);
+}
+
+.main_slider .inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    color: #fff;
+    text-shadow: 0 0 2px #000;
+}
+
+.main_slider figure .inner h2 {
+    font-size: 55px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+/* 박스에 영향을 미치지 않고, 본인 자체가 변해야하기 때문에 h2/p/a에 transition과 transform을 줘야함 */
+.main_slider figure.on .inner h2 {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+/*.main_slider figure.slick-current h2 {
+    color: #f00;
+    transition: 2s;
+} 자바스크립트로 일이 꼬일 때 만드는 방법 벗 화면 첫시작부분은 적용이 안됨 왜냐면 만들어진 상태에서 붙이기 때문에..*/
+
+.main_slider figure .inner p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 20px 0;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_slider figure.on .inner p {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 0.5s;
+}
+
+
+.main_slider figure .inner a {
+    display: inline-block;
+    /* 버튼을 만들 떄, 디스플레이:블록 + width로 만들면 글자 수에 따라 신축성을 가질 수 없음. 그래서 inline-block을 주고 padding을 줌 */
+    padding: 5px 15px 8px 15px;
+    background: #333;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_slider figure.on .inner a {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 1s;
+}
+
+.main_visual .num {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-100%);
+    /*left: 50%;을 줘서 가운데로 보내고, 마진을 줘서 나간만큼을 `-100%으로 해서 선을 맞춰춤 
+    margin: 0 0 0 500px;을 줘도 되지만 내용이 늘어나면 복잡해짐 */
+    width: 100px;
+    height: 100px;
+    background-image: url(../img/KakaoTalk_20220615_112745164.png);
+    background-position-y: -500px;
+    margin: 0 0 0 600px;
+    transition: 0.3s;
+}
+
+.main_visual .custom_dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    background: #ddd;
+    display: flex;
+}
+
+.main_visual .custom_dots li {
+    position: relative;
+    flex: 1;
+}
+
+.main_visual .custom_dots li~li {
+    border-left: 1px solid #fff;
+
+}
+
+.main_visual .custom_dots li a {
+    position: relative;
+    display: block;
+    padding: 10px;
+}
+
+.main_visual .custom_dots li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #f00;
+}
+
+.main_visual .custom_dots li.on::before {
+    width: 100%;
+    transition: 2s;
+}
+
+.main_visual i {
+    font-size: 30px;
+    vertical-align: middle;
+}

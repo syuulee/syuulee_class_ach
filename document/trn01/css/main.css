@@ -1,0 +1,173 @@
+:root {
+  --mc: #dc3545;
+  --gc: #dddddd;
+  --wc: #f8f9fa;
+  --dc: #000;
+}
+
+html {
+  font-size: 20px;
+}
+/*기본 폰트 사이즈를 20px*/
+
+body {
+  font-size: 0.8rem;
+}
+/*0.8rem=16px*/
+
+.top_banner {
+  border-top: 2px solid var(--mc);
+  border-bottom: 1px solid var(--gc);
+  font-size: 0.65rem;
+  line-height: 1.5rem;
+}
+/* ling-height는 메뉴 만들 때 좋음 */
+
+.top_banner .container {
+  display: flex;
+  justify-content: flex-end;
+  width: 60rem;
+  margin: 0 auto;
+}
+
+.top_banner li {
+  border-right: 1px solid #ddd;
+  padding: 0 10px;
+}
+/*a영역은 충분히 클릭할 수 잇도록 영역을 잡는 것이 rule*/
+
+.header {
+  line-height: 5rem;
+}
+
+.header .container {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header h1 img {
+  width: 300px;
+}
+
+.header nav {
+  margin: 0 0 0 auto;
+}
+
+.header nav > ul {
+  display: flex;
+  gap: 1.5rem;
+}
+/* 메뉴는 부모자식 확실히 하는 게 좋음 ">" 사용 */
+
+.header nav > ul a {
+  display: block;
+  font-size: 0.85rem;
+}
+
+.header nav > ul > li {
+  position: relative;
+}
+
+.header nav > ul > li ~ li::before {
+  content: '';
+  position: absolute;
+  inset: 50% auto auto -1rem;
+  width: 1px;
+  height: 0.6rem;
+  background: var(--gc);
+  transform: translateY(-50%);
+}
+/* li~li하면 맨앞에 있는 bar사라짐 */
+
+.header i {
+  font-size: 1.25rem;
+  padding: 0.25rem;
+  background: var(--gc);
+  border-radius: 3px;
+  margin: 0 0 0 1rem;
+  vertical-align: middle;
+}
+/* 아이콘은 폰트 웨이트 주면 안됨=폰트가 사라짐
+즉, 아이콘은 두껍게 할 수 없음 */
+
+.main_visual {
+  position: relative;
+}
+
+.main_visual .main_slider img {
+  width: 100%;
+}
+
+.main_visual .slogan {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  text-align: right;
+  text-shadow: 0 0 2px var(--dc);
+  color: var(--wc);
+}
+/* margin: 0 auto는 포지션에서 안 먹힘
+* 폰트 가독성에 문제가 생길 경우(배경이 깨끗하지 않을 때) text-shadow */
+
+.main_visual .slogan h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 2rem 0;
+}
+
+.main_visual .slogan h2::after {
+  content: '';
+  display: block;
+  width: 4rem;
+  height: 2px;
+  background: var(--wc);
+  margin: 1rem 5px 0 auto;
+}
+
+.main_visual .slogan p {
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.main_visual figure {
+  height: 30rem;
+}
+
+.main_visual .itm01 {
+  background: url(../img/main_bg01.jpg) no-repeat center center/ 100%;
+}
+.main_visual .itm01.on {
+  background: url(../img/main_bg01.jpg) no-repeat center center/ 150%;
+  transition: 2s;
+}
+.main_visual .itm02 {
+  background: url(../img/main_bg02.jpg) no-repeat center center/ 100%;
+}
+.main_visual .itm02.on {
+  background: url(../img/main_bg02.jpg) no-repeat center center/ 150%;
+  transition: 2s;
+}
+.main_visual .itm03 {
+  background: url(../img/main_bg03.jpg) no-repeat center center/ 100%;
+}
+.main_visual .itm03.on {
+  background: url(../img/main_bg03.jpg) no-repeat center center/ 150%;
+  transition: 2s;
+}
+/*슬라이드이미지를 백그라운드로 넣는 법 {
+  background: #f00 url(../img/main_banner01.jpg) no-repeat center center/ cover;
+ */
+/* background-size: cover 어떻게든 박스를 가득채워라-->주로 사용
+  background-size: contain 어떻게하든 백그라운드를 보여줘라-->거의 안 씀 */
+/* background-attachment: fixed 커버가 늘어나있는 상태에서 픽스드가 되면 고정됨. 패럴렉스?라고 함
+  스크롤을 내리면 이미지 고정된 상태이지만, 사진이 스크롤되는 효과를 보이게 함 */
+/* background-position:center center(X Y) */
+
+/* background에서 중요한 것이 이미지 경로
+ :html의 경로가 아닌 css에서 받는 경로
+ 즉, css에서 봤을 때 이미지 경로
+ 
+ 원래 사이즈를 기본으로 이미지가 반복됨->background-repeat: no-repeat;를 해줘야 이미지 반복이 안됨*/

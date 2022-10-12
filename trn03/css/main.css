@@ -1,0 +1,182 @@
+html {
+    font-size: 10px
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.Wrapper {}
+
+.container {
+    display: flex;
+    width: 120rem;
+    margin: 0 auto;
+}
+
+.TopBanner {
+    background: #f8f8f8;
+    padding: 3rem 0 3rem 0;
+    /* 반응형에 대비해서 상우하좌 순으로 적어줌 */
+}
+
+.TopBanner .container {
+    position: relative;
+    display: block;
+}
+
+.TopBanner h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+}
+
+.TopBanner p {
+    font-size: 1.3rem;
+    /* transform: rotate(45deg);
+    font-weight 300에 가독성이 안 좋으니까 rotate해서 쓰는 경우가 있긴 함 근데 뭐 딱히 달라지는 건 없음*/
+}
+
+.TopBanner a {
+    display: inline-block;
+    border: 1px solid #333;
+    padding: 2px 2rem 5px 2rem;
+    transform: translateY(-2px);
+    /* transform은 inline요소에서는 안 먹힌다. */
+    margin: 0 0 0 2rem;
+}
+
+.TopBanner i {
+    position: absolute;
+    top: 0;
+    right: 1.5rem;
+}
+
+.header {
+    line-height: 10rem;
+}
+
+.header h1 {
+    font-size: 0;
+    /* 살짝 로고가 떨어져 있기 때문에 font-size: 0;을 해줌 */
+}
+
+.gnb {
+    margin: 0 0 0 auto;
+}
+
+.gnb a {
+    display: block;
+}
+
+.gnb a::first-letter {
+    color: #f00;
+}
+
+.gnb>ul {
+    display: flex;
+    gap: 3rem;
+}
+
+.gnb>ul>li {
+    position: relative;
+}
+
+.gnb>ul>li~li::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -1.5rem;
+    width: 1px;
+    height: 1.2rem;
+    background: #ddd;
+    transform: translateY(-50%);
+}
+
+#searchForm {
+    margin: 0 0 0 4rem;
+}
+
+#searchForm input[name="search"] {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #333;
+}
+
+#searchForm input[name="search"]:focus::placeholder {
+    color: transparent;
+}
+
+
+#searchForm input[name="search"] {
+    color: rgb(177, 81, 255);
+}
+
+#searchForm button {
+    outline: none;
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .container {
+        display: flex;
+        width: auto;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .TopBanner {
+        position: absolute;
+        top: 50%;
+        left: 1.5rem;
+        right: 1.5rem;
+        /* 어떤 사이즈에서도 가운데를 유지하면서 양쪽 간격이 같게 오른쪽, 왼쪽 사이즈 지정 */
+        transform: translateY(-50%);
+        background: #f8f8f8;
+        padding: 3rem 0 3rem 0;
+        /* 반응형에 대비해서 상우하좌 순으로 적어줌 */
+    }
+
+    .TopBanner .container {
+        position: static;
+        display: block;
+        padding: 0 2rem 0 2rem;
+    }
+
+    .TopBanner h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 0 0 1rem 0;
+    }
+
+    .TopBanner p {
+        font-size: 1.3rem;
+        /* transform: rotate(45deg);
+        font-weight 300에 가독성이 안 좋으니까 rotate해서 쓰는 경우가 있긴 함 근데 뭐 딱히 달라지는 건 없음*/
+        line-height: 1.4;
+    }
+
+    .TopBanner a {
+        display: block;
+        /* 인라인블럭에서 블록으로 바꾸면 박스 사이즈가 길어지기 때문에 사이즈를 줘야함 */
+        border: 1px solid #333;
+        text-align: center;
+        width: 100px;
+        transform: translateY(0);
+        /* transform은 inline요소에서는 안 먹힌다. */
+        margin: 2rem 0 0 0;
+        /* 형제 사이에는 마진겹침이 없다. p & a */
+    }
+
+    .TopBanner i {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px;
+        background: #333;
+        color: #fff;
+    }
+}
